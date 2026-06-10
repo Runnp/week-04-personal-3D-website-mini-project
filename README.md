@@ -7,3 +7,5 @@ visuals and 3D models represent major changes of how from an angry kid with powe
 moving on exploring academia world changed me completely, much much thanks to Dr Lyusyena Kirakosyan who programmed me to pursue academia in addition to industry work, it is just life vision
 
 animation oh, so far so long, so long so far, yet to write and make it done though working experience at dip animation producing pre-production materia also taught me a lot, first patience, then how adults life is full of jizz bizz, then how to render in RedShift
+
+open source, supporting a software with holistic desire to contribute to it and benefit its users is something that can bring you from the middle of nowhere to highly rated top 30 educational places on earth

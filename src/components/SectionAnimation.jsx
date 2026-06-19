@@ -2,10 +2,15 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 
 const PROJECTS = [
-  { id: 1, title: 'Character Rig',  subtitle: 'Skeletal Animation', year: '2024', tags: ['Maya', 'Rigging', 'Character'], desc: 'Full body character rig with facial blendshapes and dynamic cloth simulation. Built for real-time pipeline.' },
-  { id: 2, title: 'Fluid Sim',      subtitle: 'VFX / Houdini',      year: '2024', tags: ['Houdini', 'FLIP', 'VFX'],       desc: 'High-resolution fluid simulation driven by custom velocity fields. Rendered with Mantra.' },
-  { id: 3, title: 'Doppi Pomidor',  subtitle: 'TV Cartoon',         year: '2023-2026', tags: ['Maya', 'Blender', 'Redshift'], desc: 'Worked at DIP Animation Studio as Cartoon General Artist, contributing to TV cartoon production and visual polish.', link: 'https://youtu.be/0Z8gVQXgab0?feature=shared' },
-  { id: 4, title: 'Shader Pack',    subtitle: 'Technical Art',       year: '2024', tags: ['GLSL', 'Unity', 'HLSL'],        desc: 'Stylised surface shaders inspired by cel-shading and ink wash painting. Real-time, game-ready.' },
+  {
+    id: 1,
+    title: 'Doppi Pomidor',
+    subtitle: 'TV Cartoon',
+    year: '2023-2026',
+    tags: ['Maya', 'Blender', 'Redshift'],
+    desc: 'Worked at DIP Animation Studio as Cartoon General Artist, contributing to TV cartoon production and visual polish.',
+    link: 'https://youtu.be/0Z8gVQXgab0?feature=shared'
+  },
 ]
 
 function Modal({ project, onClose }) {
@@ -74,45 +79,40 @@ export default function SectionAnimation() {
             <span className="font-mono text-xs text-mid">— selected work</span>
           </div>
 
-          <table className="w-full border-collapse border border-ink text-sm">
-            <thead>
-              <tr className="border-b border-ink bg-faint">
-                <th className="font-mono text-[0.65rem] text-mid text-left px-3 py-2 border-r border-rule font-normal">#</th>
-                <th className="font-mono text-[0.65rem] text-mid text-left px-3 py-2 border-r border-rule font-normal">Title</th>
-                <th className="font-mono text-[0.65rem] text-mid text-left px-3 py-2 border-r border-rule font-normal hidden sm:table-cell">Type</th>
-                <th className="font-mono text-[0.65rem] text-mid text-left px-3 py-2 border-r border-rule font-normal hidden sm:table-cell">Tags</th>
-                <th className="font-mono text-[0.65rem] text-mid text-left px-3 py-2 font-normal">Year</th>
-              </tr>
-            </thead>
-            <tbody>
-              {PROJECTS.map((p) => (
-                <tr key={p.id}
-                  className="border-b border-rule hover:bg-faint transition-colors duration-100 cursor-none"
-                  onClick={() => setSelected(p)}
-                  data-cursor
-                >
-                  <td className="font-mono text-[0.65rem] text-mid px-3 py-2 border-r border-rule tabular-nums">
-                    {String(p.id).padStart(2,'0')}
-                  </td>
-                  <td className="font-mono text-[0.82rem] text-link px-3 py-2 border-r border-rule underline">
-                    {p.title}
-                  </td>
-                  <td className="font-mono text-[0.72rem] text-mid px-3 py-2 border-r border-rule hidden sm:table-cell">
-                    {p.subtitle}
-                  </td>
-                  <td className="font-mono text-[0.65rem] text-mid px-3 py-2 border-r border-rule hidden sm:table-cell">
-                    {p.tags.join(', ')}
-                  </td>
-                  <td className="font-mono text-[0.72rem] text-mid px-3 py-2 tabular-nums">
-                    {p.year}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+          <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6">
+            {PROJECTS.map((p) => (
+              <button
+                key={p.id}
+                onClick={() => setSelected(p)}
+                className="border border-ink p-5 text-left hover:bg-faint transition-colors duration-100"
+                data-cursor
+              >
+                <div className="flex flex-wrap items-center gap-2 mb-3">
+                  <span className="font-mono text-[0.65rem] text-mid">{p.subtitle}</span>
+                  <span className="font-mono text-[0.65rem] text-mid">•</span>
+                  <span className="font-mono text-[0.65rem] text-mid">{p.year}</span>
+                </div>
+                <h3 className="font-display text-3xl text-ink mb-3">{p.title}</h3>
+                <p className="font-body text-sm text-ink leading-relaxed mb-4">{p.desc}</p>
+                <div className="flex flex-wrap gap-2">
+                  {p.tags.map(t => (
+                    <span key={t} className="font-mono text-[0.58rem] border border-rule px-1.5 py-0.5 text-mid">{t}</span>
+                  ))}
+                </div>
+              </button>
+            ))}
+
+            <div className="border border-ink bg-faint min-h-[280px] flex items-center justify-center overflow-hidden">
+              <img
+                src="/justMe.png"
+                alt="Runnp"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
 
           <p className="font-mono text-[0.65rem] text-mid mt-4">
-            — click any row to expand. more work available on request.
+            — click the project card to expand.
           </p>
         </div>
       </section>

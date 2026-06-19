@@ -36,7 +36,7 @@ export default function Hero() {
 
         {/* Name row */}
         <div ref={wrapRef}>
-          <div className="fade-in flex items-baseline gap-4 border-b border-ink pb-3 mb-6">
+          <div className="fade-in flex items-center gap-6 border-b border-ink pb-3 mb-6">
             <h1
               className="font-display text-[clamp(2.8rem,8vw,5.5rem)] leading-none text-ink select-none"
               onMouseEnter={trigger} data-cursor>
@@ -74,18 +74,6 @@ export default function Hero() {
             {/* 3D Canvas — right col */}
             <div className="fade-in relative h-[320px] sm:h-[420px] lg:h-full min-h-[320px]
                             overflow-hidden border-t lg:border-t-0 border-rule mt-6 lg:mt-0">
-              {/* Center circular image placeholder */}
-              <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                <div
-                  className="w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-ink
-                             flex items-center justify-center bg-faint"
-                  style={{ boxShadow: '0 0 0 4px #fff, 0 0 0 5px #000' }}>
-                  {/* ↓ Replace src with your actual image path e.g. src="/me.jpg" */}
-                  <span className="font-mono text-[0.55rem] text-mid text-center px-2 leading-tight">
-                    [your photo here]<br/>replace src
-                  </span>
-                </div>
-              </div>
               {/* 3D canvas behind */}
               <div className="absolute inset-0">
                 <Scene />
@@ -100,7 +88,7 @@ export default function Hero() {
         <div className="border-t border-ink pt-3 flex flex-wrap items-center gap-x-6 gap-y-1">
           <span className="font-mono text-[0.65rem] text-mid">Nurmuhammad Mirzaahmadov</span>
           <span className="font-mono text-[0.65rem] text-mid">Tashkent, Uzbekistan</span>
-          <span className="font-mono text-[0.65rem] text-mid">→ University of Toronto</span>
+          <span className="font-mono text-[0.65rem] text-mid">→ University of Toronto - Toronto, Canada</span>
           <span className="font-mono text-[0.65rem] text-link ml-auto hidden sm:inline">
             <a href="#me">read more ↓</a>
           </span>

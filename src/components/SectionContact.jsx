@@ -11,17 +11,17 @@ export default function SectionContact() {
         <div className="flex flex-col gap-6 sm:flex-row sm:gap-16">
           <div className="flex flex-col gap-1">
             <span className="font-mono text-[0.65rem] text-mid uppercase tracking-widest mb-2">Links</span>
-            <a href="https://github.com/" target="_blank" rel="noopener noreferrer"
+            <a href="https://github.com/Runnp/" target="_blank" rel="noopener noreferrer"
               className="font-mono text-sm text-link" data-cursor>
               github.com/runnp
             </a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer"
+            <a href="https://www.linkedin.com/in/runnp3d/" target="_blank" rel="noopener noreferrer"
               className="font-mono text-sm text-link" data-cursor>
-              linkedin.com/in/runnp
+              linkedin.com/in/runnp3d
             </a>
-            <a href="mailto:hello@runnp.art"
+            <a href="mailto:runnp3ddd@gmail.com"
               className="font-mono text-sm text-link" data-cursor>
-              hello@runnp.art
+              runnp3ddd@gmail.com
             </a>
           </div>
 
@@ -43,7 +43,7 @@ export default function SectionContact() {
         {/* Footer */}
         <div className="border-t border-ink mt-12 pt-4 flex justify-between items-center">
           <span className="font-mono text-[0.65rem] text-mid">
-            runnp.art — Nurmuhammad Mirzaahmadov © 2025
+            runnp.art — Nurmuhammad Mirzaahmadov © 2026
           </span>
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}

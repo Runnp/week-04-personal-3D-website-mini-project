@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 const PROJECTS = [
   { id: 1, title: 'Character Rig',  subtitle: 'Skeletal Animation', year: '2024', tags: ['Maya', 'Rigging', 'Character'], desc: 'Full body character rig with facial blendshapes and dynamic cloth simulation. Built for real-time pipeline.' },
   { id: 2, title: 'Fluid Sim',      subtitle: 'VFX / Houdini',      year: '2024', tags: ['Houdini', 'FLIP', 'VFX'],       desc: 'High-resolution fluid simulation driven by custom velocity fields. Rendered with Mantra.' },
-  { id: 3, title: 'Short Film',     subtitle: 'Animated Narrative',  year: '2023', tags: ['Blender', 'Cycles', 'Story'],   desc: 'A silent short exploring memory and place, set in an imagined version of Tashkent. Full CG environment.' },
+  { id: 3, title: 'Doppi Pomidor',  subtitle: 'TV Cartoon',         year: '2023-2026', tags: ['Maya', 'Blender', 'Redshift'], desc: 'Worked at DIP Animation Studio as Cartoon General Artist, contributing to TV cartoon production and visual polish.', link: 'https://youtu.be/0Z8gVQXgab0?feature=shared' },
   { id: 4, title: 'Shader Pack',    subtitle: 'Technical Art',       year: '2024', tags: ['GLSL', 'Unity', 'HLSL'],        desc: 'Stylised surface shaders inspired by cel-shading and ink wash painting. Real-time, game-ready.' },
 ]
 
@@ -39,9 +39,17 @@ function Modal({ project, onClose }) {
           </div>
           <hr className="border-ink mb-4" />
           <p className="font-body text-sm text-ink leading-relaxed mb-4">{project.desc}</p>
-          <p className="font-mono text-xs text-mid mb-4">
-            — placeholder. replace with real project breakdown, renders, process notes.
-          </p>
+          {project.link && (
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-mono text-xs text-link underline mb-4 inline-block"
+              data-cursor
+            >
+              Watch video ↗
+            </a>
+          )}
           <div className="flex flex-wrap gap-2">
             {project.tags.map(t => (
               <span key={t} className="font-mono text-[0.65rem] border border-ink px-2 py-0.5">{t}</span>
